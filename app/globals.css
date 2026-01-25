@@ -181,4 +181,20 @@
   body {
     @apply bg-background text-foreground;
   }
+  ::selection {
+    background-color: #d16565;
+    color: #000000;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #36454f;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    opacity: 0.8;
+  }
 }

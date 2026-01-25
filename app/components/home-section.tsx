@@ -1,43 +1,70 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { LottieComponent } from "./lottieComponent";
 
 export const HomeSection = () => {
   return (
     <>
-      <section className="min-h-screen w-full flex items-center justify-center px-4">
-        <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="text-justify">
-            <span className="text-xl md:text-2xl text-primary">
-              Hi, my name is
-            </span>
-            <h1 className="text-3xl md:text-6xl font-bold mt-2">John Tin</h1>
-            <h1 className="text-2xl md:text-4xl text-primary mt-2">
-              A Data Analyst
-            </h1>
-            <p className="text-md md:text-lg mt-4">
-              I am a Data Analyst with a strong passion for turning data into
-              meaningful insights and actionable decisions. With expertise in
-              data analysis, data visualization, and statistical thinking, I
-              combine analytical skills with business understanding to identify
-              patterns, optimize processes, and support data-driven
-              decision-making across organizations.
+      <section id="home" className="relative overflow-hidden">
+        <section className="hidden min-h-screen h-fit w-full absolute -z-10 opacity-2.5 top-20 md:flex items-center justify-center">
+          <div className="text-center scale-200 rotate-12 font-serif font-stretch-expanded">
+            <p className="text-4xl md:text-9xl font-semibold leading-none -mb-5">
+              Passionate
+            </p>
+            <p className="text-4xl md:text-9xl font-semibold leading-none -mb-5">
+              Professional
+            </p>
+            <p className="text-4xl md:text-9xl font-semibold leading-none -mb-5">
+              Data-Analyst
+            </p>
+            <p className="text-4xl md:text-9xl font-semibold leading-none">
+              Logical Thinker
             </p>
           </div>
-          <div className="flex justify-end">
-            <Image
-              src="/profile.jpg"
-              className="rounded-4xl"
-              alt="Profile"
-              width={300}
-              height={500}
-            />
+        </section>
+        <section className="min-h-screen w-full flex items-center justify-center px-4">
+          <div className="max-w-6xl w-full flex flex-col-reverse mt-16 md:mt-0 md:flex-row items-center justify-around gap-8">
+            <div className="md:max-w-[60%] w-full pl-0">
+              <span className="text-base md:text-md text-primary">
+                Hi, my name is
+              </span>
+              <h1 className="text-4xl md:text-7xl font-bold mt-2 mb-2">
+                John Tin
+              </h1>
+              <h1 className="text-3xl md:text-5xl text-primary mt-3 mb-3">
+                Data-Analyst
+              </h1>
+              <p className="text-base md:text-md mb-1">
+                I am a Data Analyst with a strong passion for turning data into
+                meaningful insight.
+              </p>
+              <p className="text-base md:text-md">
+                With expertise in data analysis, data visualization, and
+                statistical thinking, I combine analytical skills with business
+                understanding to identify patterns, optimize processes, and
+                support data-driven decision-making across organizations.
+              </p>
+              <div className="mt-5 scale-110 pl-7">
+                <Button className="text-sm md:text-base mr-4 text-secondary">
+                  Download CV
+                </Button>
+                <Button className="text-sm md:text-base text-secondary">
+                  Contact Me!
+                </Button>
+              </div>
+            </div>
+            <div className="w-full md:w-auto flex justify-center">
+              <LottieComponent />
+            </div>
+          </div>
+        </section>
+        <div className="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 w-full scale-85 text-center">
+          <div className="mb-2">Scroll</div>
+          <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center mx-auto">
+            <div className="w-1 h-3 bg-primary mt-2 rounded-full animate-bounce"></div>
           </div>
         </div>
       </section>
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary mt-2 rounded-full animate-bounce"></div>
-        </div>
-      </div>
     </>
   );
 };
