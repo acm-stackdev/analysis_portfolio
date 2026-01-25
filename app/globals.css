@@ -182,7 +182,7 @@
     @apply bg-background text-foreground;
   }
   ::selection {
-    background-color: #d16565;
+    background-color: oklch(0.7214 0.1337 49.9802);
     color: #000000;
   }
   ::-webkit-scrollbar {
