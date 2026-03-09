@@ -36,14 +36,14 @@ export const HomeSection = () => {
                 Data-Analyst
               </h1>
               <p className="text-base md:text-md mb-1">
-                I am a Data Analyst with a strong passion for turning data into
-                meaningful insight.
+                I am a postgraduate student in Supply Chain and Operations
+                Management passionate about optimizing processes and building
+                efficient, resilient supply chains.
               </p>
               <p className="text-base md:text-md">
-                With expertise in data analysis, data visualization, and
-                statistical thinking, I combine analytical skills with business
-                understanding to identify patterns, optimize processes, and
-                support data-driven decision-making across organizations.
+                I combine analytical thinking, Lean and Six Sigma principles,
+                and real-world procurement experience to help organizations
+                improve operations and make better data-driven decisions.
               </p>
               <div className="mt-5 scale-100 md:scale-110 pl-0 md:pl-7">
                 <Button className="text-sm md:text-base mr-4 text-secondary">

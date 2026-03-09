@@ -23,7 +23,7 @@ export const Footer = () => {
   return (
     <>
       {mobile ? (
-        <footer className="fixed w-full bottom-0 flex flex-row items-center justify-center bg-transparent backdrop-blur-sm">
+        <footer className="fixed w-full bottom-0 flex flex-row items-center justify-centerbackdrop-blur-sm">
           <div className="h-15 w-[90%] border border-border m-4 rounded-lg flex items-center justify-between space-x-3">
             <div className="flex mt-3 flex-row w-full items-center justify-around">
               <Link href="/">
@@ -46,7 +46,7 @@ export const Footer = () => {
           </div>
         </footer>
       ) : (
-        <footer className="scale-130 py-8 fixed bottom-0 right-52 flex flex-row items-center justify-center">
+        <footer className="scale-130 py-8 fixed bottom-0 right-10 flex flex-row items-center justify-center">
           <div className="container mx-auto px-4 text-center space-y-5">
             <Tooltip>
               <TooltipTrigger asChild>
