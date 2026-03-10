@@ -47,7 +47,7 @@ export const CareerSection = () => {
       id="career"
       className="w-full min-h-[95vh] custom-grid py-20 md:py-20"
     >
-      <div className="text-2xl font-bold text-center">
+      <div className="text-2xl font-bold text-center pb-5">
         <RoughNotation
           type="underline"
           show={true}
