@@ -5,7 +5,7 @@ import Link from "next/link";
 export const HomeSection = () => {
   return (
     <>
-      <section id="home" className="relative overflow-hidden">
+      <section id="home" className="relative overflow-hidden pb-15">
         <section className="hidden min-h-screen h-fit w-full absolute -z-10 opacity-2.5 top-20 md:flex items-center justify-center select-none">
           <div className="text-center scale-200 rotate-12 font-serif font-stretch-expanded">
             <p className="text-4xl md:text-9xl font-semibold leading-none -mb-5">

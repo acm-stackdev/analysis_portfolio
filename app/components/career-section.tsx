@@ -1,3 +1,4 @@
+"use client";
 import { RoughNotation } from "react-rough-notation";
 import { ArrowRight } from "lucide-react";
 import {
@@ -11,66 +12,42 @@ import {
   DialogHeader,
   DialogTrigger,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 
-const careerData = [
-  {
-    id: 1,
-    company: "Marks and Spencer",
-    period: "Sep 2023 - Present",
-    title: "Data Analyst",
-    description:
-      "Data Analyst at Marks & Spencer specialising in supply chain and warehouse analytics, using SQL, Power BI, and Azure tools to improve operational efficiency and decision-making.",
-    details: [
-      "Employed advanced analytics to reveal pivotal retail trends, achieving process optimizations that substantially increased efficiency and reduced the Customer Failure Rate (CFR) to a remarkable 0.8% for retail orders.",
-      "Designed compelling Power BI visualizations that drove data-informed strategies, enhancing operational productivity and spearheading a 20% uplift in operational performance metrics.",
-      "Optimized data workflows by integrating SQL, Python, Azure Data Factory for building pipelines, Power Automate, and Logic Apps to automate data tasks, markedly cutting down on man-hours and minimizing errors.",
-      "Developed a network orderwell report for M&S distribution centers, by using data from 5 databases, enhancing the central e-commerce team's allocation efficiency and achieving a 5% overall improvement in operational efficiency.",
-      "Conducted a performance analysis of the Despatch Department, utilizing hypothesis testing and linear regression to identify key improvement areas, resulting in a 4% enhancement in colleague performance.",
-      "Involved in the Warehouse Management System upgrade, ensuring a seamless transition and maintaining smooth operation of all critical reports, pipelines, and data flows. Reviewed and rewrote the logic for reporting related to the entire Despatch Operation, ensuring accuracy and efficiency in the new system.",
-      "Developed a Power Apps solution to collect data for Accuracy Audit checks in the Despatch area, integrated with Azure Pipelines to cross-verify against the Warehouse Management System, and utilized Power BI for data visualization—resulting in a 10% improvement in audit accuracy.",
-      "Contributed to the full network stock position and manual stock allocation across all Distribution Centres during the M&S cyber incident. Collaborated closely with the Demand & Fulfilment team and DC Operations teams, enhancing stock allocation efficiency under critical conditions.",
-      "Led the development of a Dispatch Department Performance Report using SQL, Power BI, Azure Data Factory, and PowerApps, improving performance metrics by 10% and designing dashboards tailored for all management levels to support mid-year reviews.",
-    ],
-  },
-  {
-    id: 2,
-    company: "ZWE Purified Water",
-    period: "Jan 2021 - Jul 2021",
-    title: "Supply Chain Analyst",
-    description:
-      "Supply Chain Analyst at ZWE Purified Water specializing in demand forecasting, inventory optimization, and supplier analysis to enhance supply chain performance.",
-    details: [
-      "Utilized SQL for data analysis, refining supply chain processes, accurately calculating lead times, and improving supplier identification.",
-      "Developed accurate demand forecasts based on historical data and market trends, improving production planning efficiency by 20% and logistics activities by 10%.",
-      "Implemented lean methodologies and JIT concepts in inventory management, resulting in a 20% increase in inventory control and a 7% improvement in delivery processes.",
-      "Minimized procurement risks by developing and implementing risk management strategies, including risk assessments, supply chain mapping, and rigorous customer qualification.",
-      "Coordinated with sales, marketing, and operations teams to align forecasts with business objectives and market expectations, ensuring optimal stock levels at all times.",
-    ],
-  },
-  {
-    id: 3,
-    company: "ZWE Purified Water",
-    period: "Nov 2019 – Jan 2021",
-    title: "Supply and Demand Planner",
-    description:
-      "Supply and Demand Planner at ZWE Purified Water specializing in demand forecasting, inventory optimization, and supply planning to support efficient production and distribution.",
-    details: [
-      "Developed accurate demand forecasts, taking into account product life cycles, market trends, cannibalization, and substitution, leading to a reduction in stock-outs by 20%.",
-      "Successfully managed the introduction and end-of-life forecast processes for new water products within the system, improving overall forecast accuracy by 25%.",
-      "Regularly analyzed slow-moving and obsolete finished goods, reducing excess inventory by 17% and generating significant cost savings.",
-      "Built and maintained strong relationships with bottlers and distribution partners, enhancing communication efficiency and leading to better operational alignment.",
-      "Analyzed and tracked forecasts received from distribution partners and bottlers, optimizing MRP and supply planning.",
-    ],
-  },
-];
+interface CareerJob {
+  id: number;
+  company: string;
+  period: string;
+  title: string;
+  description: string;
+  details: string[];
+}
 
 export const CareerSection = () => {
+  const [careerData, setCareerData] = useState<CareerJob[]>([]);
+
+  useEffect(() => {
+    const fetchCareerData = async () => {
+      try {
+        const response = await fetch("/career-data.json");
+        const data = await response.json();
+        setCareerData(data);
+      } catch (error) {
+        console.error("Error fetching career data:", error);
+      }
+    };
+
+    fetchCareerData();
+  }, []);
+
   return (
-    <section id="career" className="w-full min-h-[95vh] custom-grid">
-      <div className="p-10 text-2xl font-bold text-center">
+    <section
+      id="career"
+      className="w-full min-h-[95vh] custom-grid py-20 md:py-20"
+    >
+      <div className="text-2xl font-bold text-center">
         <RoughNotation
           type="underline"
           show={true}
@@ -145,7 +122,7 @@ export const CareerSection = () => {
                           </Button>
                         </DialogTrigger>
                       </div>
-                      <DialogContent className="min-w-[95vw] md:min-w-5xl max-h-[80vh] overflow-y-auto ">
+                      <DialogContent className="min-w-[90vw] md:min-w-5xl">
                         <DialogHeader>
                           <DialogTitle className="text-2xl">
                             {job.title}
@@ -154,7 +131,7 @@ export const CareerSection = () => {
                             {job.company} | {job.period}
                           </div>
                         </DialogHeader>
-                        <div className="mt-4">
+                        <div className="mt-4 max-h-[50vh] overflow-y-auto no-scrollbar">
                           <ul className="space-y-3 list-disc pl-5 text-muted-foreground">
                             {job.details.map((detail, index) => (
                               <li key={index} className="leading-relaxed">
