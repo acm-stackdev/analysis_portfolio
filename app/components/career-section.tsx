@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { TechStack } from "./tech-stack";
 
 interface CareerJob {
   id: number;
@@ -149,6 +150,7 @@ export const CareerSection = () => {
           </div>
         </div>
       </div>
+      <TechStack />
     </section>
   );
 };

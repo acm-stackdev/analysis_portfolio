@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Data Analysis",
+    "iconName": "BarChart3",
+    "color": "text-blue-500"
+  },
+  {
+    "name": "Databricks",
+    "iconName": "Layers",
+    "color": "text-orange-500"
+  },
+  {
+    "name": "DAX",
+    "iconName": "Table2",
+    "color": "text-purple-500"
+  },
+  {
+    "name": "Azure",
+    "iconName": "Cloud",
+    "color": "text-sky-500"
+  },
+  {
+    "name": "Power Automate",
+    "iconName": "Zap",
+    "color": "text-blue-600"
+  },
+  {
+    "name": "Power BI",
+    "iconName": "PieChart",
+    "color": "text-yellow-500"
+  },
+  {
+    "name": "Python",
+    "iconName": "Terminal",
+    "color": "text-green-500"
+  },
+  {
+    "name": "SQL",
+    "iconName": "Database",
+    "color": "text-indigo-500"
+  }
+]

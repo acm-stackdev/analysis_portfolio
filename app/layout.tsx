@@ -5,6 +5,11 @@ import { ThemeProvider } from "./components/theme-provider";
 export const metadata: Metadata = {
   title: "John Tin",
   description: "Portfolio",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
