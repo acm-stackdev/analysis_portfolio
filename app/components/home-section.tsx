@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { LottieComponent } from "./lottieComponent";
 import Link from "next/link";
 
@@ -35,15 +34,21 @@ export const HomeSection = () => {
               <h1 className="text-3xl md:text-5xl text-primary mt-3 mb-3 select-none">
                 Data-Analyst
               </h1>
-              <p className="text-base md:text-md mb-1">
-                I am a postgraduate student in Supply Chain and Operations
-                Management passionate about optimizing processes and building
-                efficient, resilient supply chains.
+              <p className="text-base md:text-md mb-1 text-justify">
+                A Business Intelligence Developer at Marks & Spencer who enjoys
+                transforming complex data into meaningful insights and scalable
+                BI solutions.
               </p>
-              <p className="text-base md:text-md">
-                I combine analytical thinking, Lean and Six Sigma principles,
-                and real-world procurement experience to help organizations
-                improve operations and make better data-driven decisions.
+              <p className="text-base md:text-md mb-1 text-justify">
+                With a background in engineering and supply chain, I’m
+                passionate about solving real-world problems using data. I’ve
+                completed the Data Fellowship Level 4 programme and continue
+                exploring machine learning in my free time.
+              </p>
+              <p className="text-base md:text-md text-justify">
+                Outside of work, I enjoy reading, travelling, and sharing my
+                learning journey through a Facebook page where I post about
+                data, career growth, and personal experiences.
               </p>
               <div className="mt-5 scale-100 md:scale-110 pl-0 md:pl-7">
                 <Button className="text-sm md:text-base mr-4 text-secondary">

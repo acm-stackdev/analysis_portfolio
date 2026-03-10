@@ -6,7 +6,7 @@ export const AboutSection = () => {
     <>
       <section
         id="about"
-        className="w-full min-h-[95vh] text-center bg-background-thin custom-grid py-10"
+        className="w-full min-h-[95vh] text-center bg-background-thin custom-grid py-20 md:py-10"
       >
         <div className="pb-5 text-2xl font-bold">
           <RoughNotation

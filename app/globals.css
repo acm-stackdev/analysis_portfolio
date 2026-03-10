@@ -189,16 +189,18 @@
     color: #000000;
   }
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 0px;
+    display: none;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: #36454f;
+    background: transparent;
+    display: none;
   }
   ::-webkit-scrollbar-thumb:hover {
-    opacity: 0.8;
+    background: transparent;
   }
 }
 
