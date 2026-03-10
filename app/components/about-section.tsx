@@ -10,7 +10,7 @@ export const AboutSection = () => {
       >
         <div className="pb-5 text-2xl font-bold">
           <RoughNotation
-            type="circle"
+            type="underline"
             show={true}
             animationDuration={1500}
             animationDelay={500}
