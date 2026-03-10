@@ -4,8 +4,11 @@ import Image from "next/image";
 export const AboutSection = () => {
   return (
     <>
-      <section id="about" className="w-full min-h-[95vh] text-center">
-        <div className="p-10 text-2xl font-bold">
+      <section
+        id="about"
+        className="w-full min-h-[95vh] text-center bg-background-thin custom-grid py-10"
+      >
+        <div className="pb-5 text-2xl font-bold">
           <RoughNotation
             type="circle"
             show={true}
@@ -15,8 +18,8 @@ export const AboutSection = () => {
             About Me
           </RoughNotation>
         </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">
-          <div className="flex justify-center">
+        <div className="max-w-7xl mx-auto md:grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">
+          <div className="flex justify-center p-10 md:p-0">
             <Image
               src="/hero.jpg"
               alt="Profile"
@@ -26,8 +29,8 @@ export const AboutSection = () => {
               className="rounded-3xl"
             />
           </div>
-          <div className="text-left max-w-2xl">
-            <p className="text-sm md:text-base leading-relaxed text-justify">
+          <div className="text-left max-w-2xl mx-5 md:mx-0">
+            <p className="text-base md:text-md leading-relaxed text-left md:text-justify">
               Analytical Data & BI Specialist with expertise in Azure
               technologies, Power BI, and SQL. Proven track record in designing
               robust star schemas and governed datasets that bridge the gap
@@ -40,11 +43,11 @@ export const AboutSection = () => {
               <h1 className="font-semibold text-primary text-base md:text-lg mt-4">
                 Master's Supply Chain and Operation Management
               </h1>
-              <h2 className="text-sm md:text-base italic mt-2">
+              <h2 className="text-base md:text-md italic mt-2">
                 University of Nottingham | 2021 ~ 2022
               </h2>
-              <p className="text-sm md:text-base mt-2">Merit - 68.2%</p>
-              <li className="text-sm md:text-base ml-6 leading-relaxed mt-2">
+              <p className="text-base md:text-md mt-2">Merit - 68.2%</p>
+              <li className="text-base md:text-md ml-6 leading-relaxed mt-2">
                 Attained the highest score in a group project involving the
                 analysis of Boots Pharmaceutical's supply chain strategy,
                 standing out amongst 232 students.

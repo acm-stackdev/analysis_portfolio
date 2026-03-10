@@ -5,6 +5,7 @@
 
 :root {
   --background: oklch(0.9383 0.0042 236.4993);
+  --background-thin: oklch(0.9183 0.0048 236.6);
   --foreground: oklch(0.3211 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.3211 0 0);
@@ -65,6 +66,7 @@
 
 .dark {
   --background: oklch(0.2598 0.0306 262.6666);
+  --background-thin: oklch(0.28 0.035 262.8);
   --foreground: oklch(0.9219 0 0);
   --card: oklch(0.3106 0.0301 268.6365);
   --card-foreground: oklch(0.9219 0 0);
@@ -123,6 +125,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-thin: var(--background-thin);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -197,4 +200,14 @@
   ::-webkit-scrollbar-thumb:hover {
     opacity: 0.8;
   }
+}
+
+@utility custom-grid {
+  background-image: radial-gradient(
+    circle,
+    oklch(0.6397 0.172 36.4421 / 0.2) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 24px 24px;
+  background-position: center;
 }
