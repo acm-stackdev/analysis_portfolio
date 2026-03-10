@@ -51,7 +51,7 @@ export const TechStack = () => {
     fetchToolsData();
   }, []);
   return (
-    <section className="max-w-5xl mx-auto px-4">
+    <section className="max-w-5xl mx-auto px-4 mt-0 md:mt-16">
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         <h2 className="text-2xl font-bold tracking-tight">Tech Stack</h2>
 
