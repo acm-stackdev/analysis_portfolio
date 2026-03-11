@@ -40,6 +40,15 @@ export const Navbar = () => {
     return () => observer.disconnect();
   }, [navItems]);
 
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    setActiveSection("");
+  };
+
   const handleScroll = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     href: string,
@@ -65,6 +74,7 @@ export const Navbar = () => {
             <Link
               className="text-2xl font-semibold hover:text-primary transition-colors duration-200"
               href="/"
+              onClick={scrollToTop}
             >
               JohnTin
             </Link>
