@@ -6,7 +6,7 @@ export const AboutSection = () => {
     <>
       <section
         id="about"
-        className="w-full min-h-[95vh] text-center bg-background-thin custom-grid py-20 md:py-20"
+        className="w-full min-h-[95vh] text-center bg-background-thin custom-grid py-10 md:py-10"
       >
         <div className="pb-5 text-2xl font-bold">
           <RoughNotation
@@ -18,7 +18,7 @@ export const AboutSection = () => {
             About Me
           </RoughNotation>
         </div>
-        <div className="max-w-7xl mx-auto md:grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">
+        <div className="max-w-7xl mx-auto pt-0 md:pt-5 md:grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">
           <div className="flex justify-center p-10 md:p-0">
             <Image
               src="/hero.jpg"

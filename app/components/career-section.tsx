@@ -46,7 +46,7 @@ export const CareerSection = () => {
   return (
     <section
       id="career"
-      className="w-full min-h-[95vh] custom-grid py-20 md:py-20"
+      className="w-full min-h-[95vh] custom-grid py-10 md:py-10"
     >
       <div className="text-2xl font-bold text-center pb-5">
         <RoughNotation
@@ -59,7 +59,7 @@ export const CareerSection = () => {
         </RoughNotation>
       </div>
 
-      <div className="max-w-5xl mx-auto pb-16 md:pb-0">
+      <div className="max-w-5xl mx-auto pt-5 pb-16 md:pb-0">
         <div className="relative">
           {/* Vertical Timeline Line */}
           <div className="absolute left-3 md:left-6 top-0 bottom-0 w-0.5 bg-border"></div>
@@ -107,7 +107,7 @@ export const CareerSection = () => {
                               </Button>
                             </DialogTrigger>
                           </TooltipTrigger>
-                          <TooltipContent>
+                          <TooltipContent className="font-semibold">
                             <p>View full details</p>
                           </TooltipContent>
                         </Tooltip>
