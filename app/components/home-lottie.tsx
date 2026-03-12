@@ -3,7 +3,7 @@
 import { useLottie } from "lottie-react";
 import animationData from "../../public/Online Work.json";
 
-export const LottieComponent = () => {
+export const HomeLottie = () => {
   const defaultOptions = {
     animationData: animationData,
     loop: true,
@@ -18,4 +18,4 @@ export const LottieComponent = () => {
   );
 };
 
-export default LottieComponent;
+export default HomeLottie;

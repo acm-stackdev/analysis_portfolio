@@ -73,6 +73,7 @@ export const Navbar = () => {
           <div className="flex items-center space-x-0.5">
             <Link
               className="text-2xl font-semibold hover:text-primary transition-colors duration-200"
+              aria-label="Home"
               href="/"
               onClick={scrollToTop}
             >
@@ -89,6 +90,7 @@ export const Navbar = () => {
               <Button
                 key={item.name}
                 variant="link"
+                aria-label={item.name}
                 asChild
                 className={`hidden md:inline-flex text-md transition-all duration-300 ${
                   isActive
@@ -99,6 +101,7 @@ export const Navbar = () => {
                 {/* 3. Using handleScroll for the click event */}
                 <Link
                   href={item.href}
+                  aria-label={item.name}
                   onClick={(e) => handleScroll(e, item.href)}
                 >
                   {item.name}

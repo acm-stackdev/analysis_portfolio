@@ -101,6 +101,7 @@ export const CareerSection = () => {
                               <Button
                                 variant="outline"
                                 size="icon"
+                                aria-label="View full details"
                                 className="rounded-full"
                               >
                                 <ArrowRight className="h-4 w-4" />
@@ -118,12 +119,13 @@ export const CareerSection = () => {
                           <Button
                             variant="outline"
                             className="w-full text-xs h-8"
+                            aria-label="More details"
                           >
                             More details
                           </Button>
                         </DialogTrigger>
                       </div>
-                      <DialogContent className="min-w-[90vw] md:min-w-5xl">
+                      <DialogContent className="min-w-[90vw] md:min-w-5xl border-primary/50 shadow-[0_0_15px_rgba(var(--primary),0.3)] bg-background/95 backdrop-blur-md">
                         <DialogHeader>
                           <DialogTitle className="text-2xl">
                             {job.title}

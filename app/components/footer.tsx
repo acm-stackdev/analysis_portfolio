@@ -91,6 +91,7 @@ export const Footer = () => {
                 <Link
                   key={item.name}
                   href={item.href}
+                  aria-label={item.name}
                   className={`flex flex-col items-center justify-center space-y-1 transition-all duration-300 ${
                     isActive
                       ? "text-primary scale-110"
@@ -127,6 +128,7 @@ export const Footer = () => {
                     <DropdownMenuItem key={subItem.name} asChild>
                       <Link
                         href={subItem.href}
+                        aria-label={subItem.name}
                         className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer ${
                           isSubActive ? "bg-primary/10 text-primary" : ""
                         }`}
@@ -153,6 +155,7 @@ export const Footer = () => {
                     <Link
                       href={item.href}
                       target="_blank"
+                      aria-label={item.name}
                       className="block text-muted-foreground hover:text-primary hover:-translate-y-1 transition-all duration-300"
                     >
                       <Icon size={22} strokeWidth={1.5} />

@@ -1,12 +1,20 @@
+"use client";
 import { Button } from "@/components/ui/button";
-import { LottieComponent } from "./lottieComponent";
 import Link from "next/link";
+import HomeLottie from "./home-lottie";
 
 export const HomeSection = () => {
+  const handleScrollToAbout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const elem = document.getElementById("about");
+    elem?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <section id="home" className="relative overflow-hidden pb-15">
-        <section className="hidden min-h-screen h-fit w-full absolute -z-10 opacity-2.5 top-20 md:flex items-center justify-center select-none">
+        <section className="hidden min-h-[95vh] h-fit w-full absolute -z-10 opacity-2.5 top-20 md:flex items-center justify-center select-none">
           <div className="text-center scale-200 rotate-12 font-serif font-stretch-expanded">
             <p className="text-4xl md:text-9xl font-semibold leading-none -mb-5">
               Passionate
@@ -22,7 +30,7 @@ export const HomeSection = () => {
             </p>
           </div>
         </section>
-        <section className="min-h-screen w-full flex items-center justify-center px-4">
+        <section className="min-h-[95vh] w-full flex items-center justify-center px-4">
           <div className="max-w-6xl w-full flex flex-col-reverse mt-16 md:mt-0 md:flex-row items-center justify-around gap-8">
             <div className="md:max-w-[60%] w-full pl-0">
               <span className="text-base md:text-md text-primary select-none">
@@ -40,8 +48,8 @@ export const HomeSection = () => {
                 BI solutions.
               </p>
               <p className="text-base md:text-md mb-1 text-justify">
-                With a background in engineering and supply chain, I’m
-                passionate about solving real-world problems using data. I’ve
+                With a background in engineering and supply chain, I'm
+                passionate about solving real-world problems using data. I've
                 completed the Data Fellowship Level 4 programme and continue
                 exploring machine learning in my free time.
               </p>
@@ -50,23 +58,31 @@ export const HomeSection = () => {
                 learning journey through a Facebook page where I post about
                 data, career growth, and personal experiences.
               </p>
-              <div className="mt-5 scale-100 md:scale-110 pl-0 md:pl-7">
-                <Button className="text-sm md:text-base mr-4 text-secondary">
+              <div className="mt-5">
+                <Button
+                  aria-label="Download CV"
+                  className="text-sm font-bold md:text-base mr-4 text-secondary"
+                >
                   Download CV
                 </Button>
-                <Button className="text-sm md:text-base text-secondary">
-                  Contact Me!
+                <Button
+                  aria-label="Contact Me"
+                  className="text-sm font-bold md:text-base text-secondary"
+                >
+                  <Link href="mailto:johntin97@outlook.com">Contact Me!</Link>
                 </Button>
               </div>
             </div>
             <div className="w-full md:w-auto flex justify-center">
-              <LottieComponent />
+              <HomeLottie />
             </div>
           </div>
         </section>
         <div className="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 w-fit scale-85 text-center select-none">
           <Link
             href="#about"
+            onClick={handleScrollToAbout}
+            aria-label="Scroll to about section"
             className="hover:text-primary transition-colors duration-300"
           >
             <div className="mb-2">Scroll</div>

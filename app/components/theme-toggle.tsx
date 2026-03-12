@@ -14,7 +14,10 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <button className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
+      <button
+        aria-label="Toggle theme"
+        className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+      >
         <Sun className="h-5 w-5" />
       </button>
     );

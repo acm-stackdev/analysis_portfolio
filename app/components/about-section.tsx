@@ -25,7 +25,6 @@ export const AboutSection = () => {
               alt="Profile"
               width={300}
               height={300}
-              objectFit="fill"
               className="rounded-3xl"
             />
           </div>
