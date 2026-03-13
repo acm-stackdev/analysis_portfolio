@@ -79,7 +79,6 @@ export const Navbar = () => {
             >
               JohnTin
             </Link>
-            <span className="text-primary text-2xl h-auto">.dev</span>
           </div>
         </RoughNotation>
 
