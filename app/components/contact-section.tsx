@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import * as z from "zod";
+
 import { RoughNotation } from "react-rough-notation";
 import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 
@@ -17,21 +17,16 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import ContactLottie from "./contact-lottie";
-
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  subject: z
-    .string()
-    .min(3, { message: "Subject must be at least 3 characters." }),
-  message: z
-    .string()
-    .min(10, { message: "Message must be at least 10 characters." }),
-});
+import z from "zod";
+import { contactSchema } from "@/schemas";
+import { sendContactMessage } from "@/actions/contact";
+import { useState, useTransition } from "react";
+import { toast } from "sonner";
 
 export const ContactSection = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const [isPending, startTransition] = useTransition();
+  const form = useForm<z.infer<typeof contactSchema>>({
+    resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -40,9 +35,18 @@ export const ContactSection = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    alert("Form submitted! (Backend pending)");
+  function onSubmit(values: z.infer<typeof contactSchema>) {
+    startTransition(() => {
+      sendContactMessage(values).then((data) => {
+        if (data.error) {
+          toast.error(data.error);
+        }
+        if (data.success) {
+          toast.success(data.success);
+          form.reset();
+        }
+      });
+    });
   }
 
   const socials = [
@@ -148,6 +152,7 @@ export const ContactSection = () => {
               />
               <Button
                 type="submit"
+                disabled={isPending}
                 aria-label="Send Message"
                 className="w-full text-secondary font-bold"
               >

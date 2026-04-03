@@ -25,6 +25,8 @@ export const AboutSection = () => {
               alt="Profile"
               width={300}
               height={300}
+              priority
+              style={{ width: "auto", height: "auto" }}
               className="rounded-3xl"
             />
           </div>
