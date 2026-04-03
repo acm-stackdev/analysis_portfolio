@@ -44,7 +44,7 @@ export const Footer = () => {
   ];
 
   const socialItems = [
-    { name: "GitHub", href: "https://github.com", icon: Github },
+    // { name: "GitHub", href: "https://github.com", icon: Github },
     {
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/johntin97/",

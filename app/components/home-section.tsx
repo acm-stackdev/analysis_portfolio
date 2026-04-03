@@ -63,7 +63,7 @@ export const HomeSection = () => {
                   aria-label="Download CV"
                   className="text-sm font-bold md:text-base mr-4 text-secondary"
                 >
-                  Download CV
+                  <Link href="/resume">View My CV</Link>
                 </Button>
                 <Button
                   aria-label="Contact Me"

@@ -184,12 +184,12 @@ export const CareerWrapper = ({
                 {showAll ? (
                   <>
                     Show Less{" "}
-                    <ChevronUp className="ml-2 h-4 w-4 group-hover:-translate-y-1 transition-transform" />
+                    <ChevronUp className="ml-2 h-4 w-4 transition-transform" />
                   </>
                 ) : (
                   <>
                     View More Experience{" "}
-                    <ChevronDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+                    <ChevronDown className="ml-2 h-4 w-4 transition-transform" />
                   </>
                 )}
               </Button>

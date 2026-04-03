@@ -5,13 +5,8 @@ import { Footer } from "./components/footer";
 import { CareerSection } from "./components/career-section";
 import { SideNav } from "./components/side-nav";
 import { ContactSection } from "./components/contact-section";
-import { getExperienceData } from "@/actions/experience";
-
-export const revalidate = 3600;
 
 export default async function Home() {
-  const experienceData = await getExperienceData();
-
   return (
     <>
       <Navbar />

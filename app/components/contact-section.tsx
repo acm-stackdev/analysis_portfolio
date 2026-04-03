@@ -50,7 +50,7 @@ export const ContactSection = () => {
   }
 
   const socials = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
+    // { icon: Github, href: "https://github.com", label: "GitHub" },
     {
       icon: Linkedin,
       href: "https://linkedin.com/in/johntin97/",
