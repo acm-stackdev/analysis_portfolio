@@ -59,7 +59,7 @@ export const sendContactMessage = async (
       ],
     });
 
-    return { success: "Message sent to Notion!" };
+    return { success: "Message sent successfully!" };
   } catch (error) {
     console.error(error);
     return { error: "Failed to send message." };
