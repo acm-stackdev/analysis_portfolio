@@ -15,7 +15,7 @@ export const Navbar = () => {
     { name: "About", href: "#about", id: "about" },
     { name: "Career", href: "#career", id: "career" },
     { name: "Contact", href: "#contact", id: "contact" },
-    { name: "Blog", href: "/blog", id: "blog" },
+    // { name: "Blog", href: "/blog", id: "blog" },
   ]);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export const Navbar = () => {
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.6 },
     );
 
     navItems.forEach((item) => {
@@ -68,9 +68,8 @@ export const Navbar = () => {
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    href: string
+    href: string,
   ) => {
-    // If it's an anchor link and we're on home page, scroll smoothly
     if (href.startsWith("#") && isHome) {
       e.preventDefault();
       const targetId = href.replace("#", "");
@@ -79,7 +78,6 @@ export const Navbar = () => {
         behavior: "smooth",
       });
     }
-    // Otherwise, let the Link handle it (navigate to /blog or /#about)
   };
 
   return (
@@ -108,7 +106,9 @@ export const Navbar = () => {
             const isActive = activeSection === item.id;
             // For anchor links not on the home page, prepend /
             const href =
-              item.href.startsWith("#") && !isHome ? `/${item.href}` : item.href;
+              item.href.startsWith("#") && !isHome
+                ? `/${item.href}`
+                : item.href;
 
             return (
               <Button

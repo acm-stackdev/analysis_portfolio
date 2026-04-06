@@ -40,7 +40,7 @@ export const Footer = () => {
 
   const moreItems = [
     { name: "Projects", href: "/projects", id: "projects", icon: Code2 },
-    { name: "Blog", href: "/blog", id: "blog", icon: BookOpen },
+    // { name: "Blog", href: "/blog", id: "blog", icon: BookOpen },
     { name: "Contact", href: "#contact", id: "contact", icon: Mail },
   ];
 
