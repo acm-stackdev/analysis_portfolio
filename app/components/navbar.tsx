@@ -5,22 +5,32 @@ import { ThemeToggle } from "./theme-toggle";
 import { Button } from "@/components/ui/button";
 import { RoughNotation } from "react-rough-notation";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [activeSection, setActiveSection] = useState("");
   const [navItems] = useState([
     { name: "About", href: "#about", id: "about" },
     { name: "Career", href: "#career", id: "career" },
     { name: "Contact", href: "#contact", id: "contact" },
+    { name: "Blog", href: "/blog", id: "blog" },
   ]);
 
   useEffect(() => {
+    if (!isHome) {
+      setActiveSection("");
+      return;
+    }
+
     const handleScroll = () => {
       if (window.scrollY < 200) {
         setActiveSection("");
       }
     };
     window.addEventListener("scroll", handleScroll);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -29,41 +39,52 @@ export const Navbar = () => {
           }
         });
       },
-      { threshold: 0.6 }, // Adjust based on section height
+      { threshold: 0.6 }
     );
 
     navItems.forEach((item) => {
-      const el = document.getElementById(item.id);
-      if (el) observer.observe(el);
+      if (item.href.startsWith("#")) {
+        const el = document.getElementById(item.id);
+        if (el) observer.observe(el);
+      }
     });
 
-    return () => observer.disconnect();
-  }, [navItems]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
+  }, [navItems, isHome]);
 
   const scrollToTop = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-    setActiveSection("");
+    if (isHome) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      setActiveSection("");
+    }
   };
 
-  const handleScroll = (
+  const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    href: string,
+    href: string
   ) => {
-    e.preventDefault();
-    const targetId = href.replace("#", "");
-    const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
+    // If it's an anchor link and we're on home page, scroll smoothly
+    if (href.startsWith("#") && isHome) {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const elem = document.getElementById(targetId);
+      elem?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+    // Otherwise, let the Link handle it (navigate to /blog or /#about)
   };
 
   return (
     <header className="fixed top-0 left-1/2 -translate-x-1/2 w-full z-50 backdrop-blur-md select-none border-b border-border/40">
-      <div className="max-w-7xl mx-auto p-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-24 py-4 flex items-center justify-between">
         <RoughNotation
           type="underline"
           show={true}
@@ -85,6 +106,10 @@ export const Navbar = () => {
         <div className="flex items-center space-x-1">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
+            // For anchor links not on the home page, prepend /
+            const href =
+              item.href.startsWith("#") && !isHome ? `/${item.href}` : item.href;
+
             return (
               <Button
                 key={item.name}
@@ -97,11 +122,10 @@ export const Navbar = () => {
                     : "text-foreground/70 hover:text-primary"
                 }`}
               >
-                {/* 3. Using handleScroll for the click event */}
                 <Link
-                  href={item.href}
+                  href={href}
                   aria-label={item.name}
-                  onClick={(e) => handleScroll(e, item.href)}
+                  onClick={(e) => handleClick(e, item.href)}
                 >
                   {item.name}
                 </Link>

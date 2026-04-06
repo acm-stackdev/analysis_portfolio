@@ -12,6 +12,7 @@ import {
   Github,
   Linkedin,
   MessageCircle,
+  Facebook,
 } from "lucide-react";
 import {
   Tooltip,
@@ -38,8 +39,8 @@ export const Footer = () => {
   ];
 
   const moreItems = [
-    { name: "Projects", href: "#projects", id: "projects", icon: Code2 },
-    { name: "Blog", href: "/Blog", id: "blog", icon: BookOpen },
+    { name: "Projects", href: "/projects", id: "projects", icon: Code2 },
+    { name: "Blog", href: "/blog", id: "blog", icon: BookOpen },
     { name: "Contact", href: "#contact", id: "contact", icon: Mail },
   ];
 
@@ -49,6 +50,11 @@ export const Footer = () => {
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/johntin97/",
       icon: Linkedin,
+    },
+    {
+      name: "FaceBook",
+      href: "https://www.facebook.com/profile.php?id=61559895252873",
+      icon: Facebook,
     },
     {
       name: "WhatsApp",

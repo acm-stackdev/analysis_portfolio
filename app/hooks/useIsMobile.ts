@@ -27,7 +27,7 @@ export function useBreakpoint() {
   return breakpoint;
 }
 
-export function useIsMobile(breakpoint = 1280) {
+export function useIsMobile(breakpoint = 1024) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

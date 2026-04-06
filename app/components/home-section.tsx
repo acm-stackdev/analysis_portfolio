@@ -30,7 +30,7 @@ export const HomeSection = () => {
             </p>
           </div>
         </section>
-        <section className="min-h-[95vh] w-full flex items-center justify-center px-4">
+        <section className="min-h-[95vh] w-full flex items-center justify-center px-6 md:px-20 lg:px-24">
           <div className="max-w-6xl w-full flex flex-col-reverse mt-16 md:mt-0 md:flex-row items-center justify-around gap-8">
             <div className="md:max-w-[60%] w-full pl-0">
               <span className="text-base md:text-md text-primary select-none">
@@ -61,13 +61,13 @@ export const HomeSection = () => {
               <div className="mt-5">
                 <Button
                   aria-label="Download CV"
-                  className="text-sm font-bold md:text-base mr-4 text-secondary"
+                  className="text-sm font-bold text-secondary md:text-base mr-4"
                 >
                   <Link href="/resume">View My CV</Link>
                 </Button>
                 <Button
                   aria-label="Contact Me"
-                  className="text-sm font-bold md:text-base text-secondary"
+                  className="text-sm font-bold text-secondary md:text-base"
                 >
                   <Link href="mailto:johntin97@outlook.com">Contact Me!</Link>
                 </Button>

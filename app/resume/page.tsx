@@ -2,6 +2,7 @@ import { Client, isFullDatabase } from "@notionhq/client";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ResumeNavbar } from "../components/resume-navbar";
+import { ResumeViewer } from "../components/resume-viewer-wrapper";
 
 const notion = new Client({ auth: process.env.NOTION_SECRET });
 
@@ -37,7 +38,9 @@ export default async function ResumePage() {
     return (
       <div className="flex h-screen items-center justify-center flex-col gap-4">
         <h1 className="text-2xl font-bold">CV Not Found</h1>
-        <p className="text-muted-foreground">Please upload the CV to Notion.</p>
+        <p className="text-muted-foreground">
+          Something went wrong. Please try again later.
+        </p>
         <Link href="/">
           <Button>Go Back Home</Button>
         </Link>
@@ -46,16 +49,13 @@ export default async function ResumePage() {
   }
 
   return (
-    <div className="flex flex-col h-screen w-full bg-background pt-20">
-      <ResumeNavbar cvUrl={cvUrl} />
+    <div className="flex flex-col h-screen w-full bg-background overflow-hidden">
+      <div className="h-18 shrink-0 flex items-center border-b px-4">
+        <ResumeNavbar cvUrl={cvUrl} />
+      </div>
 
-      {/* 3. The Embedded PDF Preview */}
-      <div className="flex-1 w-full h-full bg-muted/30">
-        <iframe
-          src={`${cvUrl}#toolbar=0`}
-          className="w-full h-full border-none"
-          title="CV Preview"
-        />
+      <div className="flex-1 min-h-0 w-full bg-muted/30">
+        <ResumeViewer fileUrl={cvUrl} />
       </div>
     </div>
   );

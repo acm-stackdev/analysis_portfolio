@@ -18,7 +18,7 @@ export const AboutSection = () => {
             About Me
           </RoughNotation>
         </div>
-        <div className="max-w-7xl mx-auto pt-0 md:pt-5 md:grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">
+        <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-24 pt-0 md:pt-5 md:grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">
           <div className="flex justify-center p-10 md:p-0">
             <Image
               src="/hero.jpg"

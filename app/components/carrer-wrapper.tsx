@@ -70,7 +70,7 @@ export const CareerWrapper = ({
         </RoughNotation>
       </div>
 
-      <div className="max-w-5xl mx-auto pt-5 pb-16 md:pb-0">
+      <div className="max-w-5xl mx-auto px-6 md:px-20 lg:px-24 pt-5 pb-16 md:pb-0">
         <motion.div layout className="relative">
           {/* Vertical Timeline Line */}
           <div className="absolute left-3 md:left-6 top-0 bottom-0 w-0.5 bg-border"></div>
