@@ -89,10 +89,10 @@ export const ContactSection = () => {
 
       <div className="pb-16 max-w-2xl mx-auto leading-relaxed text-center text-base md:text-lg text-muted-foreground">
         <p>
-          As a data analyst, I am motivated by transforming data into actionable
-          insights and continuously taking on new challenges. If you’re looking
-          to make data-driven decisions or collaborate on impactful projects,
-          feel free to reach out!
+          As a data professional, I am motivated by transforming data into
+          actionable insights and continuously taking on new challenges. If
+          you’re looking to make data-driven decisions or collaborate on
+          impactful projects, feel free to reach out!
         </p>
       </div>
 

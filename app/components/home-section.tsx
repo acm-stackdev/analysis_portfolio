@@ -40,7 +40,7 @@ export const HomeSection = () => {
                 John Tin
               </h1>
               <h1 className="text-3xl md:text-5xl text-primary mt-3 mb-3 select-none">
-                Data-Analyst
+                Business Intelligence Developer
               </h1>
               <p className="text-base md:text-md mb-1 text-justify">
                 A Business Intelligence Developer at Marks & Spencer who enjoys
@@ -48,15 +48,17 @@ export const HomeSection = () => {
                 BI solutions.
               </p>
               <p className="text-base md:text-md mb-1 text-justify">
-                With a background in engineering and supply chain, I'm
-                passionate about solving real-world problems using data. I've
-                completed the Data Fellowship Level 4 programme and continue
-                exploring machine learning in my free time.
+                With a background in engineering and supply chain, I bring a
+                practical, problem-solving approach to data. I’ve completed the
+                Data Fellowship Level 4 programme and continue to build my
+                expertise, with a growing interest in machine learning and
+                advanced analytics.
               </p>
               <p className="text-base md:text-md text-justify">
-                Outside of work, I enjoy reading, travelling, and sharing my
-                learning journey through a Facebook page where I post about
-                data, career growth, and personal experiences.
+                Alongside my professional work, I share my learning journey
+                around data, career growth, and personal development through my
+                Facebook platform. Outside of tech, I enjoy reading and
+                travelling.
               </p>
               <div className="mt-5">
                 <Button
