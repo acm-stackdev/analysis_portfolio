@@ -6,6 +6,9 @@ import { CareerSection } from "./components/career-section";
 import { SideNav } from "./components/side-nav";
 import { ContactSection } from "./components/contact-section";
 
+
+export const revalidate = 300;
+
 export default async function Home() {
   return (
     <>
