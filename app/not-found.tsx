@@ -32,8 +32,8 @@ export default function NotFound() {
             </RoughNotation>
           </h1>
           <p className="text-muted-foreground my-6 text-lg md:text-xl max-w-[400px]">
-            The page you are looking for has been moved or doesn't exist in our
-            database.
+            The page you are looking for has been moved or doesn&apos;t exist
+            in our database.
           </p>
         </div>
 

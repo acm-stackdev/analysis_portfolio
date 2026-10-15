@@ -3,14 +3,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import "pdfjs-viewer-element";
 
+// The custom element's imperative API, beyond standard HTMLElement members.
+interface PdfjsViewerElement extends HTMLElement {
+  injectViewerStyles?: (css: string) => void;
+}
+
 // Tell TypeScript this custom HTML tag exists
 declare global {
   namespace React {
     namespace JSX {
       interface IntrinsicElements {
         "pdfjs-viewer-element": React.DetailedHTMLProps<
-          React.HTMLAttributes<HTMLElement>,
-          HTMLElement
+          React.HTMLAttributes<PdfjsViewerElement>,
+          PdfjsViewerElement
         > & {
           src?: string;
           "search-bar"?: string;
@@ -22,7 +27,7 @@ declare global {
 }
 
 export const ResumeViewer = ({ fileUrl }: { fileUrl: string }) => {
-  const viewerRef = useRef<any>(null);
+  const viewerRef = useRef<PdfjsViewerElement | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {

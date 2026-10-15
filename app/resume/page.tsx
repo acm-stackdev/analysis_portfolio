@@ -1,8 +1,9 @@
-import { Client, isFullDatabase } from "@notionhq/client";
+import { Client, isFullDatabase, isFullPage } from "@notionhq/client";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ResumeNavbar } from "../components/resume-navbar";
 import { ResumeViewer } from "../components/resume-viewer-wrapper";
+import { getFileUrl } from "@/lib/notion";
 
 const notion = new Client({ auth: process.env.NOTION_SECRET });
 
@@ -22,8 +23,9 @@ async function getCvUrl() {
       filter: { property: "Name", title: { equals: "Main CV" } },
     });
 
-    const page = response.results[0] as any;
-    return page?.properties?.Documents?.files?.[0]?.file?.url || null;
+    const page = response.results[0];
+    if (!page || !isFullPage(page)) return null;
+    return getFileUrl(page.properties.Documents);
   } catch (error) {
     console.error("Error fetching CV:", error);
     return null;
@@ -51,7 +53,7 @@ export default async function ResumePage() {
   return (
     <div className="flex flex-col h-screen w-full bg-background overflow-hidden">
       <div className="h-18 shrink-0 flex items-center border-b px-4">
-        <ResumeNavbar cvUrl={cvUrl} />
+        <ResumeNavbar />
       </div>
 
       <div className="flex-1 min-h-0 w-full bg-muted/30">

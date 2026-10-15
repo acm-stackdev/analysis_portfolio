@@ -19,10 +19,7 @@ export const Navbar = () => {
   ]);
 
   useEffect(() => {
-    if (!isHome) {
-      setActiveSection("");
-      return;
-    }
+    if (!isHome) return;
 
     const handleScroll = () => {
       if (window.scrollY < 200) {
@@ -54,6 +51,10 @@ export const Navbar = () => {
       observer.disconnect();
     };
   }, [navItems, isHome]);
+
+  // Off the home page, no section is ever "active" — derived directly
+  // instead of synced via a setState call in the effect above.
+  const effectiveActiveSection = isHome ? activeSection : "";
 
   const scrollToTop = (e: React.MouseEvent) => {
     if (isHome) {
@@ -103,7 +104,7 @@ export const Navbar = () => {
 
         <div className="flex items-center space-x-1">
           {navItems.map((item) => {
-            const isActive = activeSection === item.id;
+            const isActive = effectiveActiveSection === item.id;
             // For anchor links not on the home page, prepend /
             const href =
               item.href.startsWith("#") && !isHome

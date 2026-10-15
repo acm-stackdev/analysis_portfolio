@@ -1,6 +1,8 @@
 "use server";
 
-import { Client, isFullDatabase } from "@notionhq/client";
+import { Client, isFullDatabase, isFullPage, isFullBlock } from "@notionhq/client";
+import type { BulletedListItemBlockObjectResponse } from "@notionhq/client";
+import { getTitleText, getRichText, getDateStart } from "@/lib/notion";
 
 const notion = new Client({ auth: process.env.NOTION_SECRET });
 
@@ -10,6 +12,12 @@ function formatDate(dateString?: string | null) {
     month: "short",
     year: "numeric",
   });
+}
+
+function isBulletedListItem(
+  block: { type: string },
+): block is BulletedListItemBlockObjectResponse {
+  return block.type === "bulleted_list_item";
 }
 
 export async function getExperienceData() {
@@ -34,27 +42,26 @@ export async function getExperienceData() {
 
     // 3. Map over the rows (Identical to before)
     const careerData = await Promise.all(
-      response.results.map(async (page: any) => {
+      response.results.filter(isFullPage).map(async (page) => {
         const company =
-          page.properties.Company?.title?.[0]?.plain_text || "Unknown Company";
+          getTitleText(page.properties.Company) || "Unknown Company";
         const title =
-          page.properties["Job Title"]?.rich_text?.[0]?.plain_text ||
-          "Unknown Title";
-        const description =
-          page.properties.Description?.rich_text?.[0]?.plain_text || "";
+          getRichText(page.properties["Job Title"]) || "Unknown Title";
+        const description = getRichText(page.properties.Description);
 
-        const startDate = page.properties["Start Date"]?.date?.start;
-        const endDate = page.properties["End Date"]?.date?.start;
+        const startDate = getDateStart(page.properties["Start Date"]);
+        const endDate = getDateStart(page.properties["End Date"]);
         const period = `${formatDate(startDate)} - ${formatDate(endDate)}`;
 
         const blocksResponse = await notion.blocks.children.list({
           block_id: page.id,
         });
         const details = blocksResponse.results
-          .filter((block: any) => block.type === "bulleted_list_item")
-          .map((block: any) =>
+          .filter(isFullBlock)
+          .filter(isBulletedListItem)
+          .map((block) =>
             block.bulleted_list_item.rich_text
-              .map((t: any) => t.plain_text)
+              .map((t) => t.plain_text)
               .join(""),
           );
 

@@ -6,11 +6,7 @@ import { RoughNotation } from "react-rough-notation";
 import { ArrowLeft } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 
-interface ResumeNavbarProps {
-  cvUrl: string;
-}
-
-export const ResumeNavbar = ({ cvUrl }: ResumeNavbarProps) => {
+export const ResumeNavbar = () => {
   return (
     <header className="fixed top-0 left-1/2 -translate-x-1/2 w-full z-50 backdrop-blur-md select-none border-b border-border/40">
       <div className="max-w-7xl mx-auto p-4 flex items-center justify-between">

@@ -54,7 +54,7 @@ export const sendContactMessage = async (
             ],
           },
         },
-        // @ts-ignore - Notion types can be finicky with mapped blocks
+        // @ts-expect-error - Notion types can be finicky with mapped blocks
         ...messageBlocks,
       ],
     });

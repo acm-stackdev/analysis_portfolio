@@ -8,6 +8,7 @@ import {
   PieChart,
   Terminal,
   Table2,
+  type LucideIcon,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useState, useEffect } from "react";
@@ -16,7 +17,7 @@ interface Tool {
   name: string;
   iconName: string;
   color: string;
-  icon?: any;
+  icon?: LucideIcon;
 }
 
 const iconMap = {
@@ -62,7 +63,7 @@ export const TechStack = () => {
               <div
                 className={`mb-3 transition-transform duration-300 group-hover:scale-110 ${tool.color}`}
               >
-                <tool.icon size={32} strokeWidth={1.5} />
+                {tool.icon && <tool.icon size={32} strokeWidth={1.5} />}
               </div>
 
               {/* Vertical Badge */}

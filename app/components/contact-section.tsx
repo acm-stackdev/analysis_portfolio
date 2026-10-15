@@ -137,7 +137,7 @@ export const ContactSection = () => {
             <div className="space-y-1">
               <h3 className="text-xl font-bold">Send a Message</h3>
               <p className="text-xs text-muted-foreground">
-                Fill out the form and I'll get back to you shortly.
+                Fill out the form and I&apos;ll get back to you shortly.
               </p>
             </div>
 

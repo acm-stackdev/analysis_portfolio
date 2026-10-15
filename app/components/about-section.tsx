@@ -42,29 +42,31 @@ export const AboutSection = () => {
             <div className="mt-4 font-bold">Education Background</div>
             <div>
               <h1 className="font-semibold text-primary text-base md:text-lg mt-4">
-                Master's Supply Chain and Operation Management
+                Master&apos;s Supply Chain and Operation Management
               </h1>
               <h2 className="text-base md:text-md italic mt-2">
                 University of Nottingham | 2021 ~ 2022
               </h2>
               <p className="text-base md:text-md mt-2">Merit - 68.2%</p>
-              <li className="text-base md:text-md ml-6 leading-relaxed mt-2">
-                Attained the highest score in a group project involving the
-                analysis of Boots Pharmaceutical's supply chain strategy,
-                standing out amongst 232 students.
-              </li>
-              <li className="text-sm md:text-base ml-6 leading-relaxed mt-2">
-                Successfully developed Work Breakdown Structures (WBS) and
-                resource histograms for intricate projects. Utilized tools such
-                as PERT and Monte Carlo simulation analysis and Earned Value
-                Analysis techniques to effectively manage projects, with a
-                success rate of 75%.
-              </li>
-              <li className="text-sm md:text-base ml-6 leading-relaxed mt-2">
-                Performed a comprehensive operation and strategy analysis for
-                DHL using the Operation Strategy Matrix, identifying key Order
-                Qualifiers and Order Winners.
-              </li>
+              <ul className="list-disc">
+                <li className="text-base md:text-md ml-6 leading-relaxed mt-2">
+                  Attained the highest score in a group project involving the
+                  analysis of Boots Pharmaceutical&apos;s supply chain
+                  strategy, standing out amongst 232 students.
+                </li>
+                <li className="text-sm md:text-base ml-6 leading-relaxed mt-2">
+                  Successfully developed Work Breakdown Structures (WBS) and
+                  resource histograms for intricate projects. Utilized tools
+                  such as PERT and Monte Carlo simulation analysis and Earned
+                  Value Analysis techniques to effectively manage projects,
+                  with a success rate of 75%.
+                </li>
+                <li className="text-sm md:text-base ml-6 leading-relaxed mt-2">
+                  Performed a comprehensive operation and strategy analysis
+                  for DHL using the Operation Strategy Matrix, identifying key
+                  Order Qualifiers and Order Winners.
+                </li>
+              </ul>
             </div>
             <div>
               <h1 className="font-semibold text-primary text-base md:text-lg mt-4">
