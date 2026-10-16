@@ -14,6 +14,7 @@ export const Navbar = () => {
   const [navItems] = useState([
     { name: "About", href: "#about", id: "about" },
     { name: "Career", href: "#career", id: "career" },
+    { name: "Projects", href: "#projects", id: "projects" },
     { name: "Contact", href: "#contact", id: "contact" },
     // { name: "Blog", href: "/blog", id: "blog" },
   ]);

@@ -35,3 +35,27 @@ export function getFileUrl(prop: NotionProperty | undefined): string | null {
   }
   return null;
 }
+
+/** Reads the option names of a Multi-select property. */
+export function getMultiSelectTags(prop: NotionProperty | undefined): string[] {
+  if (prop?.type === "multi_select") {
+    return prop.multi_select.map((tag) => tag.name);
+  }
+  return [];
+}
+
+/** Reads a Number property's value, or null if unset. */
+export function getNumber(prop: NotionProperty | undefined): number | null {
+  if (prop?.type === "number") {
+    return prop.number;
+  }
+  return null;
+}
+
+/** Reads the selected option's name of a Select property, or null if unset. */
+export function getSelectStatus(prop: NotionProperty | undefined): string | null {
+  if (prop?.type === "select") {
+    return prop.select?.name ?? null;
+  }
+  return null;
+}

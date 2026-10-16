@@ -79,7 +79,7 @@ export const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="mx-auto min-h-[95vh] flex flex-col py-16 px-6 md:px-20 lg:px-24 custom-grid bg-background-thin"
+      className="mx-auto min-h-[95vh] flex flex-col py-16 px-6 md:px-20 lg:px-24 custom-grid"
     >
       <div className="pb-8 text-center text-3xl md:text-4xl font-bold">
         <RoughNotation type="underline" show={true} animationDuration={1500}>

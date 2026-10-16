@@ -52,6 +52,16 @@ export const CareerWrapper = ({
     } else {
       setShowAll(true);
     }
+
+    // Expanding/collapsing this list changes how tall the Career section is,
+    // which pushes every section below it (Projects, Contact, ...) up or
+    // down. RoughNotation only redraws its underline when the ANNOTATED
+    // element's own size changes (it watches via ResizeObserver + window
+    // "resize" — see rough-notation's attachListeners) — it has no way to
+    // know it moved because a sibling/ancestor's layout shifted. Dispatching
+    // a resize event nudges every RoughNotation instance on the page to
+    // recheck its target's position and redraw if it actually changed.
+    window.dispatchEvent(new Event("resize"));
   };
 
   return (
