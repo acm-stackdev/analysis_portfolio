@@ -8,6 +8,8 @@ import {
   PieChart,
   Terminal,
   Table2,
+  Code2,
+  Bot,
   type LucideIcon,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -29,6 +31,8 @@ const iconMap = {
   PieChart,
   Terminal,
   Database,
+  Code2,
+  Bot,
 };
 
 export const TechStack = () => {
@@ -56,7 +60,7 @@ export const TechStack = () => {
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         <h2 className="text-2xl font-bold tracking-tight">Tech Stack</h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-8">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-x-12 gap-y-8">
           {tools.map((tool) => (
             <div key={tool.name} className="flex flex-col items-center group">
               {/* Icon Container */}
