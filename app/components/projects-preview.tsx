@@ -5,10 +5,10 @@ import { RoughNotation } from "react-rough-notation";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { ProjectRow } from "./project-row";
+import { ProjectCard } from "./project-card";
 import type { ProjectSummary } from "@/actions/projects";
 
-const MAX_PREVIEW = 3;
+const MAX_PREVIEW = 4;
 
 export const ProjectsPreview = ({ projects }: { projects: ProjectSummary[] }) => {
   const hasMore = projects.length > MAX_PREVIEW;
@@ -37,10 +37,13 @@ export const ProjectsPreview = ({ projects }: { projects: ProjectSummary[] }) =>
           </p>
         ) : (
           <>
-            <motion.div layout className="flex flex-col gap-4">
+            <motion.div
+              layout
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            >
               <AnimatePresence initial={false} mode="popLayout">
                 {preview.map((project) => (
-                  <ProjectRow key={project.id} project={project} />
+                  <ProjectCard key={project.id} project={project} />
                 ))}
               </AnimatePresence>
             </motion.div>

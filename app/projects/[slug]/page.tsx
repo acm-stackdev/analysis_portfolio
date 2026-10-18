@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Home } from "lucide-react";
 import { Navbar } from "../../components/navbar";
 import { Footer } from "../../components/footer";
 import { NotionBlocks } from "../../components/notion-blocks";
@@ -29,13 +29,22 @@ export default async function ProjectPage({
       <Navbar />
       <main className="pt-28 pb-28 md:pt-32 md:pb-20">
         <article className="max-w-3xl mx-auto px-6 md:px-0">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Projects
-          </Link>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-6">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Projects
+            </Link>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Home className="h-4 w-4" />
+              Back to Home
+            </Link>
+          </div>
 
           {project.coverImage && (
             <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border mb-8">

@@ -38,5 +38,15 @@
     "name": "SQL",
     "iconName": "Database",
     "color": "text-indigo-500"
+  },
+  {
+    "name": "VS Code",
+    "iconName": "Code2",
+    "color": "text-cyan-500"
+  },
+  {
+    "name": "AI Agents",
+    "iconName": "Bot",
+    "color": "text-pink-500"
   }
 ]
